@@ -1,4 +1,4 @@
-package day1;
+package array;
 
 public class Arrays2 {
 
