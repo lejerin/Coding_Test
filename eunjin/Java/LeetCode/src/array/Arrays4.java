@@ -1,4 +1,4 @@
-package day1;
+package array;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class Arrays4 {
 		anw.duplicateZeros(list);
 	}
 	
- static class Solution {
+	private static class Solution {
 	    public void duplicateZeros(int[] arr) {
 	        
 	    
