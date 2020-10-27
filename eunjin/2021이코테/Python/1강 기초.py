@@ -148,4 +148,137 @@ a.update([9,10])
 a.remove(1)
 print(a)
 
-#기분 입출력
+#기분 입출력 input()
+# map() 
+
+# n= int(input())
+# data = list(map(int, input().split()))
+# a,b,c = list(map(int, input().split()))
+
+# data.sort(reverse=True)
+# print(data)
+
+#빨리 입력을 받기위해 
+# import sys
+# sys.stdin.readline().rstrip()
+
+#줄바꿈을 원하지않으면 end속성 사용
+a = "hello"
+print(a, end=" ")
+print("dd")
+
+# f - String
+answer = 8
+print(f"정답은 {answer}")
+
+x = 5
+if x >= 10:
+  print("10이상")
+elif x >=5:
+  print("5이상")
+else:
+  print("5 미만")
+
+# and or
+if x <=5 and x>0:
+  print("조건 만족")
+
+# list 연산자 in, not in
+
+result = "success" if x >=0 else "fail"
+print(result)
+
+if 0<x<10:
+  print("x는 0과 10 사이의 변수")
+
+#while문
+i = 1
+result = 0
+while i <=9:
+  result += i
+  i += 1
+print(result)
+
+result = 0
+for i in range(1,10):
+  print(i)
+
+
+def add(a,b):
+  return a+b
+print(add(3,7))
+print(add(b=4, a=1))
+
+#전역변수 global
+a = 10
+
+def func():
+  global a
+  a += 1
+  print(a)
+
+func()
+func()
+
+#파이썬에서 함수는 여러 개의 반환 값을 가질 수 있습니다. 
+def operator(a,b):
+  add_var = a+b
+  var2 = a*b
+  return add_var, var2
+
+a,b = operator(7,3)
+print(a,b)
+
+#람다 표현식
+print((lambda a,b: a + b)(3,7))
+
+#람다 표현식을 사용한 정렬
+array = [('홍길동', 50), ('이순신', 32), ('아무개', 22)]
+print(sorted(array, key = lambda x: x[1]))
+
+list1 = [1,2,3,4,5]
+list2 = [6,7,8,9,10]
+result = map(lambda a,b: a+b, list1, list2)
+print(list(result))
+
+#실전에서 유ㅠ용한 표준 라이브러리
+
+# itertools : 파이썬에서 반복되는 형태의 데이터를 처리하기 위한 유용한 기능, 순열과 조합 라이브러리
+
+#heapq : 힙 자료구조, 우선순위 큐 기능
+
+#bisect : 이진탐색 기능 제공
+
+#collections : 덱, 카운터 자료구조
+
+#math
+
+#내장함수
+result = sum([1,2,3,4,5])
+print(result)
+
+result = min([1,2,3])
+print(result)
+
+from itertools import permutations
+
+data = ['a', 'b', 'c']
+result = list(permutations(data,3))
+print(result)
+
+from itertools import combinations
+result = list(combinations(data,2))
+print(result)
+
+#counter 등장 횟수
+from collections import Counter
+
+counter = Counter([1,1,2,2,3,3,3,3,3,4])
+print(counter[1])
+print(counter[3])
+print(dict(counter))
+
+#최대 공약수/ 최소 공배수 math.gcd()
+
+import math
+print(math.gcd(21,14))
