@@ -1,5 +1,8 @@
 package array;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Arrays2 {
 
 	public static void main(String[] args) {
@@ -7,23 +10,6 @@ public class Arrays2 {
 
 	}
 
-	private class Solution {
-	    public int findNumbers(int[] nums) {
-	        int count = 0;
-	    	
-	        
-	        for(int num : nums) {
-	        	
-	        	int digit = (int) (Math.log10(num)+1);
-	        	if(digit % 2 == 0) {
-	        		count++;
-	        	}
-	        }
-	       
-	    	
-	        
-	        return count;
-	    }
-	}
+	
 	
 }
