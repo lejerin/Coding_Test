@@ -1,22 +1,38 @@
 package array;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Stack;
+
 
 public class Arrays8 {
 
-	//https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/3250/
-	
-	
 	private class Solution {
-	    public boolean checkIfExist(int[] arr) {
-	        
-	    	HashSet<Integer> set = new HashSet<>();
-	    	for(int a : arr) {
-	    		if(set.contains(a*2) || (a%2 == 0 && set.contains(a/2))) return true;
-	    		set.add(a);
-	    	}
-	    	return false;
-	    }
+	   public int[] solution(String s, int[] idx) {
+		   int[] answer = new int[idx.length];
+		   
+		   
+		   Stack<Integer> stack = new Stack<>();
+		   HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();//HashMap»ý¼º
+		   
+		   for(int i=0; i<s.length(); i++) {
+			   char cur = (char) s.indexOf(i);
+			   
+			   if(cur == '{') {
+				   stack.push(i);
+			   }else if(cur == '}') {
+				   int match = stack.pop();
+				   map.put(i, match);
+				   map.put(match, i);
+			   }
+		   }
+		   
+		   for(int i=0; i< idx.length; i++) {
+			   answer[i] = map.get(idx[i]);
+		   }
+		   
+		   return answer;
+ 	   }
 	}
 	
 }
