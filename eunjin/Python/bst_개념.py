@@ -7,6 +7,8 @@ class Node(object):
 
 class BinarySearhTree(object):
 
+
+
   #1. 초기화
   def __init__(self):
     #최상위 노드
